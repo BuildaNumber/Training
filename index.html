@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)file:///C:/Users/ali_3/Downloads/training_page.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyscalculia Training | Numeralis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .hero {
+            margin-top: 80px;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><circle cx="200" cy="100" r="150" fill="rgba(255,255,255,0.05)"/><circle cx="800" cy="400" r="200" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .stats-bar {
+            background: white;
+            padding: 3rem 2rem;
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #718096;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .overview {
+            padding: 6rem 2rem;
+        }
+
+        .overview-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .overview h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #2d3748;
+            text-align: center;
+        }
+
+        .overview p {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+            border-left: 4px solid #667eea;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .programs {
+            padding: 6rem 2rem;
+            background: #f7fafc;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .program-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .program-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .program-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .program-body {
+            padding: 2rem;
+        }
+
+        .program-features {
+            margin-bottom: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        .feature-check {
+            color: #48bb78;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .curriculum {
+            padding: 6rem 2rem;
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .module-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #667eea;
+        }
+
+        .module-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .module-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .module-card p {
+            color: #718096;
+            line-height: 1.8;
+        }
+
+        .module-topics {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .topic-tag {
+            display: inline-block;
+            background: #f7fafc;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            margin: 0.25rem;
+            color: #4a5568;
+        }
+
+        .cta {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .nav-container {
+                padding: 1rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .programs-grid, .curriculum-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .hero-buttons, .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .section-header p {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+            
+            .overview h2 {
+                font-size: 2rem;
+            }
+            
+            .overview p {
+                font-size: 1.05rem;
+            }
+            
+            .program-card, .module-card {
+                margin: 0 1rem;
+            }
+            
+            .feature-item {
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .programs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .curriculum-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .stats-bar {
+                padding: 2rem 1rem;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .stat-label {
+                font-size: 0.9rem;
+            }
+            
+            .overview, .programs, .curriculum, .cta {
+                padding: 3rem 1rem;
+            }
+            
+            .program-header h3 {
+                font-size: 1.5rem;
+            }
+            
+            .program-icon {
+                font-size: 2.5rem;
+            }
+            
+            .module-card h3 {
+                font-size: 1.3rem;
+            }
+            
+            .btn {
+                padding: 0.7rem 1rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="file:///C:/Users/ali_3/Downloads/index.html" class="logo">Numeralis</a>
+            <ul class="nav-links">
+                <li><a href="file:///C:/Users/ali_3/Downloads/index.html">Home</a></li>
+                <li><a href="file:///C:/Users/ali_3/Downloads/training_page.html#programs">Programs</a></li>
+                <li><a href="file:///C:/Users/ali_3/Downloads/training_page.html#curriculum">Curriculum</a></li>
+            </ul>
+            <a href="file:///C:/Users/ali_3/Downloads/training_page.html#enroll" class="btn btn-primary">Enroll Now</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Professional Training in Dyscalculia Screening &amp; Support</h1>
+            <p>Empower yourself with evidence-based strategies to identify and support students with mathematics learning difficulties</p>
+            <div class="hero-buttons">
+                <a href="file:///C:/Users/ali_3/Downloads/training_page.html#programs" class="btn btn-primary">View Programs</a>
+                <a href="file:///C:/Users/ali_3/Downloads/training_page.html#curriculum" class="btn btn-secondary">See Curriculum</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Educators Trained</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Satisfaction Rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">12hrs</div>
+                <div class="stat-label">CPD Certified</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Online &amp; Flexible</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="overview">
+        <div class="overview-content">
+            <h2>Why Dyscalculia Training Matters</h2>
+            <p>Dyscalculia affects approximately 5% of students, yet it remains significantly underdiagnosed compared to other learning disabilities. Many educators lack the specific training needed to identify and support students with mathematical learning difficulties effectively.</p>
+            
+            <p>Our comprehensive training program equips educators, SENCOs, educational psychologists, and support staff with the knowledge and practical skills to make a real difference in the lives of students struggling with mathematics.</p>
+
+            <div class="highlight-box">
+                <h3>What You'll Gain</h3>
+                <p>Deep understanding of the cognitive processes underlying mathematics learning, evidence-based assessment techniques using Numeralis, practical intervention strategies you can implement immediately, and confidence to support students across all educational stages from primary school to university level.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="programs" id="programs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Training Path</h2>
+                <p>Flexible programs designed for educators at every level</p>
+            </div>
+
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-header">
+                        <div class="program-icon">🎓</div>
+                        <h3>Foundation Course</h3>
+                        <p style="opacity: 0.9; margin-top: 0.5rem;">Perfect for beginners</p>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-features">
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>1 hour of self-paced video learning</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Expert-led video instruction</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Introduction to dyscalculia and mathematics learning difficulties</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Basic screening techniques</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Practical classroom strategies</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>CPD certificate upon completion</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Access to resource library</span>
+                            </div>
+                        </div>
+                        <a href="file:///C:/Users/ali_3/Downloads/training_page.html#enroll" class="btn btn-primary" style="width: 100%;">Enroll Now</a>
+                    </div>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-header">
+                        <div class="program-icon">🏆</div>
+                        <h3>Professional Certificate</h3>
+                        <p style="opacity: 0.9; margin-top: 0.5rem;">Most popular choice</p>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-features">
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>5 hours comprehensive training</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Complete Numeralis assessment training</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Advanced intervention strategies</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Live Q&amp;A sessions with experts</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Case study analysis</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Professional certificate &amp; digital badge</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>1 year access to all materials</span>
+                            </div>
+                        </div>
+                        <a href="file:///C:/Users/ali_3/Downloads/training_page.html#enroll" class="btn btn-primary" style="width: 100%;">Enroll Now</a>
+                    </div>
+                </div>
+
+                <div class="program-card">
+                    <div class="program-header">
+                        <div class="program-icon">⭐</div>
+                        <h3>Advanced Specialist</h3>
+                        <p style="opacity: 0.9; margin-top: 0.5rem;">For experienced practitioners</p>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-features">
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>10 hours intensive training</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>All Professional Certificate content</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Research methods &amp; data interpretation</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Individual mentoring sessions</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>School-wide implementation guidance</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Numeralis license included (1 year)</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-check">✓</span>
+                                <span>Lifetime access to materials</span>
+                            </div>
+                        </div>
+                        <a href="file:///C:/Users/ali_3/Downloads/training_page.html#enroll" class="btn btn-primary" style="width: 100%;">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="curriculum" id="curriculum">
+        <div class="container">
+            <div class="section-header">
+                <h2>What You'll Learn</h2>
+                <p>A comprehensive curriculum grounded in the latest research</p>
+            </div>
+
+            <div class="curriculum-grid">
+                <div class="module-card">
+                    <span class="module-number">Module 1</span>
+                    <h3>Understanding Dyscalculia</h3>
+                    <p>Explore the neurological basis of mathematics learning difficulties, prevalence and impact across the lifespan, and differentiating dyscalculia from other learning challenges.</p>
+                    <div class="module-topics">
+                        <span class="topic-tag">Neuroscience</span>
+                        <span class="topic-tag">Prevalence</span>
+                        <span class="topic-tag">Diagnosis</span>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <span class="module-number">Module 2</span>
+                    <h3>Cognitive Foundations</h3>
+                    <p>Deep dive into number sense, working memory and mathematics, visuospatial processing, and executive function in mathematical thinking.</p>
+                    <div class="module-topics">
+                        <span class="topic-tag">Number Sense</span>
+                        <span class="topic-tag">Working Memory</span>
+                        <span class="topic-tag">Executive Function</span>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <span class="module-number">Module 3</span>
+                    <h3>Assessment with Numeralis</h3>
+                    <p>Master the Numeralis screening tool, interpret cognitive profiles, and understand the 14 assessment tasks in detail.</p>
+                    <div class="module-topics">
+                        <span class="topic-tag">Screening</span>
+                        <span class="topic-tag">Interpretation</span>
+                        <span class="topic-tag">Reporting</span>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <span class="module-number">Module 4</span>
+                    <h3>Evidence-Based Interventions</h3>
+                    <p>Learn targeted teaching strategies, multisensory approaches to mathematics, technology and adaptive tools, and building mathematical confidence.</p>
+                    <div class="module-topics">
+                        <span class="topic-tag">Teaching Strategies</span>
+                        <span class="topic-tag">Multisensory</span>
+                        <span class="topic-tag">Technology</span>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <span class="module-number">Module 5</span>
+                    <h3>Classroom Implementation</h3>
+                    <p>Create inclusive mathematics classrooms, develop individualized education plans, and collaborate with parents and specialists.</p>
+                    <div class="module-topics">
+                        <span class="topic-tag">Inclusion</span>
+                        <span class="topic-tag">EHCPs</span>
+                        <span class="topic-tag">Collaboration</span>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <span class="module-number">Module 6</span>
+                    <h3>Case Studies &amp; Practice</h3>
+                    <p>Analyze real-world scenarios, practice assessment interpretation, and develop comprehensive support plans.</p>
+                    <div class="module-topics">
+                        <span class="topic-tag">Case Analysis</span>
+                        <span class="topic-tag">Hands-on Practice</span>
+                        <span class="topic-tag">Support Planning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="enroll">
+        <div class="container">
+            <h2>Ready to Make a Difference?</h2>
+            <p>Join hundreds of educators who are transforming how they support students with mathematics learning difficulties</p>
+            <div class="cta-buttons">
+                <a href="file:///C:/Users/ali_3/Downloads/training_page.html#programs" class="btn btn-primary">Enroll in a Course</a>
+                <a href="file:///C:/Users/ali_3/Downloads/training_page.html#" class="btn btn-secondary">Download Brochure</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Numeralis. Empowering educators to support every learner.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body></html>
